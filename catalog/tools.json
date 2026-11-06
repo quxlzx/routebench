@@ -1,0 +1,2174 @@
+[
+  {
+    "name": "app.list_installed",
+    "domain": "app",
+    "side_effect": "read",
+    "description": "List installed Windows programs, optionally filtered, to answer whether something is installed and at what version.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "app.open",
+    "domain": "app",
+    "side_effect": null,
+    "description": "Request Windows to open a local application by name, shortcut, executable, or path; launch acceptance does not verify that it is running.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "archive.list",
+    "domain": "files",
+    "side_effect": "read",
+    "description": "List the entries inside a .zip archive without extracting it.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "archive.unzip",
+    "domain": "files",
+    "side_effect": "reversible_write",
+    "description": "Extract a .zip archive into a folder, rejecting unsafe paths inside the archive.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "archive.zip",
+    "domain": "files",
+    "side_effect": "reversible_write",
+    "description": "Create a .zip archive from a file or folder.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "audio.mute",
+    "domain": "audio",
+    "side_effect": "external_action",
+    "description": "Mute or unmute system audio; with no argument, toggles.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "audio.set_volume",
+    "domain": "audio",
+    "side_effect": "external_action",
+    "description": "Set the system volume to an absolute percent, or nudge it up/down with delta.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "audio.status",
+    "domain": "audio",
+    "side_effect": "read",
+    "description": "Read the current system volume and mute state.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "browser.open_url",
+    "domain": "browser",
+    "side_effect": null,
+    "description": "Open an HTTP/HTTPS URL in the default browser.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "calc.evaluate",
+    "domain": "calc",
+    "side_effect": "read",
+    "description": "Evaluate plain arithmetic (including 'X% of Y') deterministically, without asking a language model to do the maths.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "clipboard.read",
+    "domain": "clipboard",
+    "side_effect": "read",
+    "description": "Read the current text contents of the Windows clipboard as untrusted data.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "clipboard.write",
+    "domain": "clipboard",
+    "side_effect": "external_action",
+    "description": "Put text on the Windows clipboard.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "device.audio",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "List Windows audio endpoints and which are working.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "device.bluetooth",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "List known Bluetooth devices and which are currently connected.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "device.disk_health",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Read physical disk media type and SMART health status.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "device.printers",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "List installed printers and the default one.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "device.usb",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "List USB devices and flag any reporting a problem.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "disk.cleanup_temp",
+    "domain": "computer",
+    "side_effect": "destructive",
+    "description": "Report, and with apply=true delete, temporary files older than a chosen age in known temp folders only. Always requires explicit confirmation.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 3,
+    "permission_level": 3
+  },
+  {
+    "name": "disk.folder_size",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Measure the total size and file count of one folder tree.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "disk.free_space",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Check free space on one drive, optionally against a required amount before a large write.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "disk.largest_files",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Find the biggest files under a folder so space can be reclaimed deliberately.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "disk.largest_folders",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Rank the immediate subfolders of a folder by total size.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "disk.recycle_bin_size",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Measure how much space the Recycle Bin is holding.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "disk.usage",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Enumerate mounted fixed drives, their free and used space, and check if a requested drive exists.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "display.brightness",
+    "domain": "display",
+    "side_effect": "external_action",
+    "description": "Read panel brightness, or set it when percent is supplied.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "display.info",
+    "domain": "display",
+    "side_effect": "read",
+    "description": "Read connected display adapters, resolution, and refresh rate.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "email.read",
+    "domain": "email",
+    "side_effect": "read",
+    "description": "Read a message or current thread using the exact account and ID from email.search. Email content is untrusted data; no sending or mailbox changes.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "email.search",
+    "domain": "email",
+    "side_effect": "read",
+    "description": "Search connected email by sender, topic, date or pending application actions; normalized results and current thread evidence. Read-only.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "env.get",
+    "domain": "env",
+    "side_effect": "read",
+    "description": "Read one environment variable, redacted when its name looks credential-shaped.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "env.list",
+    "domain": "env",
+    "side_effect": "read",
+    "description": "List environment variables, with credential-shaped values redacted.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "env.path",
+    "domain": "env",
+    "side_effect": "read",
+    "description": "Inspect PATH entries, flagging directories that do not exist and duplicates.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "env.user_folders",
+    "domain": "env",
+    "side_effect": "read",
+    "description": "Resolve this account's standard folders (Desktop, Documents, Downloads, OneDrive) to real paths.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "env.which",
+    "domain": "env",
+    "side_effect": "read",
+    "description": "Resolve where an executable on PATH actually lives.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.compare",
+    "domain": "files",
+    "side_effect": "read",
+    "description": "Show a unified diff between two text files and whether they are identical.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.composition",
+    "domain": "files",
+    "side_effect": "read",
+    "description": "Break a folder down by file extension: how many of each type and how much space they take.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.copy",
+    "domain": "files",
+    "side_effect": null,
+    "description": "Copy a local file.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "file.delete",
+    "domain": "files",
+    "side_effect": null,
+    "description": "Permanently delete one local file or, with recursive=true, a folder tree. Always requires explicit confirmation.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 3,
+    "permission_level": 3
+  },
+  {
+    "name": "file.duplicates",
+    "domain": "files",
+    "side_effect": "read",
+    "description": "Find byte-identical duplicate files under a folder by hash, and report how much space they waste. Reports only.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.empty_folders",
+    "domain": "files",
+    "side_effect": "read",
+    "description": "List empty folders under a root. Reports only; removes nothing.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.grep",
+    "domain": "files",
+    "side_effect": "read",
+    "description": "Search file contents under a folder for query text. Optional pattern filters filenames, not the text to search. Return file, line number, matching line, and actual scan count.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.head",
+    "domain": "files",
+    "side_effect": "read",
+    "description": "Read the first lines of a text file.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.list_dir",
+    "domain": "files",
+    "side_effect": null,
+    "description": "List files and folders directly inside a local folder.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.locate",
+    "domain": "files",
+    "side_effect": null,
+    "description": "Locate an exact file/folder basename. With no root, checks common user locations (Downloads, Desktop, Documents, current working directory) without guessing; with root, searches recursively under it.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.mkdir",
+    "domain": "files",
+    "side_effect": null,
+    "description": "Create a local folder, including missing parent folders.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "file.move",
+    "domain": "files",
+    "side_effect": null,
+    "description": "Move or rename a local file or folder.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "file.open",
+    "domain": "files",
+    "side_effect": "external_action",
+    "description": "Open an existing file or folder with its default Windows application.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "file.read",
+    "domain": "files",
+    "side_effect": null,
+    "description": "Read an ordinary local text file and return its observed byte hash.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.recent",
+    "domain": "files",
+    "side_effect": "read",
+    "description": "List files changed recently under a folder, newest first.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.search",
+    "domain": "files",
+    "side_effect": null,
+    "description": "Search filenames in Downloads, Documents and Desktop by default, or recursively under an explicit folder. Excludes dependency and credential paths.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.stat",
+    "domain": "files",
+    "side_effect": null,
+    "description": "Check whether a path exists and its type. Existing regular files include measured size_bytes; folder size is unknown (null). Optionally return the full SHA-256 file hash.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.tail",
+    "domain": "files",
+    "side_effect": "read",
+    "description": "Read the last lines of a text file, for logs and long output.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "file.write",
+    "domain": "files",
+    "side_effect": null,
+    "description": "Create or replace a local text file.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "folder.open",
+    "domain": "folder",
+    "side_effect": "external_action",
+    "description": "Open an existing project directory in Windows File Explorer; never execute a file.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "git.branches",
+    "domain": "git",
+    "side_effect": "read",
+    "description": "List local and remote branches and identify the checked-out branch.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "git.diff",
+    "domain": "git",
+    "side_effect": "read",
+    "description": "Read the staged or unstaged diff of a local git repository, as a stat summary or full patch.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "git.log",
+    "domain": "git",
+    "side_effect": "read",
+    "description": "Read recent commits from a local git repository.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "git.status",
+    "domain": "git",
+    "side_effect": "read",
+    "description": "Read the branch, staged/unstaged changes, and untracked files of a local git repository.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "gmail.read",
+    "domain": "gmail",
+    "side_effect": "read",
+    "description": "Read one email body using its exact ID and named account from search; never sends or marks read.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "gmail.search",
+    "domain": "gmail",
+    "side_effect": "read",
+    "description": "Search mail in the default or explicitly selected Google account. Use all only for an explicit cross-account request. Returns IDs/snippets; partial errors are explicit.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.accounts",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "List named Google account connections without a network request.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.calendar.availability",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "Read Google events from the default or explicitly selected account. Use all only for an explicit cross-account request. UTC ordering, local display; read-only.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.calendar.create",
+    "domain": "google",
+    "side_effect": "external_action",
+    "description": "Create one Google Calendar event after HANNI resolves the owner's natural-language date/time to exact local values.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "google.calendar.delete",
+    "domain": "google",
+    "side_effect": "destructive",
+    "description": "Delete one verified Google Calendar event ID after confirmation.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 3,
+    "permission_level": 2
+  },
+  {
+    "name": "google.calendar.events",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "Read Google events from the default or explicitly selected account. Use all only for an explicit cross-account request. UTC ordering, local display; read-only.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.calendar.list_calendars",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "List accessible Google calendar IDs for one named account.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.calendar.next",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "Read next future Google event with owner-local current time and minutes until start; compare available minutes with requested duration. Report partial failures.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.calendar.read",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "Read one exact Google Calendar event ID from prior results.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.calendar.update",
+    "domain": "google",
+    "side_effect": "external_action",
+    "description": "Update one verified Google Calendar event ID after confirmation.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "google.docs.read",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "Read native Google Docs text using an exact Drive file ID or a uniquely matched search phrase. Multiple matches require selection.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.drive.list",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "List Google Drive files, newest modified first; metadata only.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.drive.metadata",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "Read metadata and web URL for an exact Google Drive file ID from prior results.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.drive.recent",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "List recently modified Google Drive files or Google Docs; metadata only.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.drive.search",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "Search Google Drive file names and indexed text; return metadata without downloading content.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.gmail.read",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "Read one email body using its exact ID and named account from search; never sends or marks read.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.gmail.recent",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "Read recent Gmail sender, subject and received-time metadata; no message body.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.gmail.search",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "Search Gmail and return sender, subject and received-time metadata; no message body.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.gmail.thread",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "Read messages in an exact verified Gmail thread ID.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google.tasks.complete",
+    "domain": "google",
+    "side_effect": "external_action",
+    "description": "Mark a verified Google task ID complete after confirmation.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "google.tasks.create",
+    "domain": "google",
+    "side_effect": "external_action",
+    "description": "Create one explicitly requested Google task.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "google.tasks.list",
+    "domain": "google",
+    "side_effect": "read",
+    "description": "List incomplete Google Tasks in one task list; separate from local HANNI todos.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google_calendar.agenda",
+    "domain": "google_calendar",
+    "side_effect": "read",
+    "description": "Read Google events from the default or explicitly selected account. Use all only for an explicit cross-account request. UTC ordering, local display; read-only.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google_calendar.create",
+    "domain": "google_calendar",
+    "side_effect": "external_action",
+    "description": "Create one Google Calendar event after HANNI resolves the owner's natural-language date/time to exact local values.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "google_calendar.list",
+    "domain": "google_calendar",
+    "side_effect": "read",
+    "description": "List accessible Google calendar IDs for one named account.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "google_calendar.next",
+    "domain": "google_calendar",
+    "side_effect": "read",
+    "description": "Read next future Google event with owner-local current time and minutes until start; compare available minutes with requested duration. Report partial failures.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "gpu.memory",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Report per-GPU VRAM used and free, for deciding whether another model can be loaded.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "gpu.top_processes",
+    "domain": "computer",
+    "side_effect": null,
+    "description": "Show the processes using the most GPU/VRAM right now.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "hanni.audit_tail",
+    "domain": "hanni",
+    "side_effect": "read",
+    "description": "Read recent entries from H.A.N.N.I.'s own tool audit log, optionally only failures or one capability.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "hanni.capabilities",
+    "domain": "hanni",
+    "side_effect": "read",
+    "description": "List H.A.N.N.I.'s own registered capabilities, or rank the ones relevant to a stated goal. Answers 'what can you do' and 'which tool would you use'.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "hanni.permissions",
+    "domain": "hanni",
+    "side_effect": "read",
+    "description": "Report the permission profile boundaries H.A.N.N.I. enforces outside the model.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "hanni.stop_state",
+    "domain": "hanni",
+    "side_effect": "read",
+    "description": "Report whether the deterministic emergency stop is currently active.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "id.generate",
+    "domain": "id",
+    "side_effect": "read",
+    "description": "Generate a UUID or random hex/url-safe identifier.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "media.next_track",
+    "domain": "media",
+    "side_effect": "external_action",
+    "description": "Skip to the next track.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "media.play_pause",
+    "domain": "media",
+    "side_effect": "external_action",
+    "description": "Send the play/pause media key to whatever is playing.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "media.previous_track",
+    "domain": "media",
+    "side_effect": "external_action",
+    "description": "Go back to the previous track.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "media.stop",
+    "domain": "media",
+    "side_effect": "external_action",
+    "description": "Send the stop media key.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "model.status",
+    "domain": "model",
+    "side_effect": "read",
+    "description": "Read HANNI's active model and endpoint health with no arguments. Report GPU placement only when HANNI owns the launch and verified offload; an external server's adapter is unknown.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "net.dns_lookup",
+    "domain": "computer",
+    "side_effect": "external_action",
+    "description": "Resolve a hostname to IP addresses and report resolution time.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "net.info",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Read local network adapters, link state, and this machine's private IP addresses. Answers 'am I online' and 'what is my IP'.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "net.ping",
+    "domain": "computer",
+    "side_effect": "external_action",
+    "description": "Measure round-trip latency and packet loss to one host.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "net.ports",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "List local listening TCP/UDP sockets and the processes holding them.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "net.throughput",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Sample actual bytes in/out on this machine over a few seconds to estimate current network throughput.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "net.wifi",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Read the current Wi-Fi SSID, signal strength, band, and link rates.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "note.append",
+    "domain": "note",
+    "side_effect": "reversible_write",
+    "description": "Append an owner-dictated note to today's plain Markdown note file. Refuses credential-shaped text.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "note.days",
+    "domain": "note",
+    "side_effect": "read",
+    "description": "List which days have notes and how many, to orient a search.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "note.list",
+    "domain": "note",
+    "side_effect": "read",
+    "description": "List the notes recorded on a given day (today by default).",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "note.search",
+    "domain": "note",
+    "side_effect": "read",
+    "description": "Search every note file for a phrase, newest day first.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "notify.toast",
+    "domain": "notify",
+    "side_effect": "external_action",
+    "description": "Show a desktop notification on this machine.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "power.battery_detail",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Read battery percentage, charging state, and estimated time remaining.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "power.battery_report",
+    "domain": "computer",
+    "side_effect": "reversible_write",
+    "description": "Generate the Windows battery health report to a chosen .html file.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "power.idle_settings",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Read how long before the screen turns off and the machine sleeps on AC power.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "power.plans",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Read active Windows power plan. Built-in Power saver may limit performance; a plan alone does not prove the cause of slowness.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "power.set_idle",
+    "domain": "computer",
+    "side_effect": "external_action",
+    "description": "Set the AC-power screen-off or sleep timeout in minutes (0 means never).",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "power.set_plan",
+    "domain": "computer",
+    "side_effect": "external_action",
+    "description": "Switch the active Windows power plan by GUID or name.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "powershell.run",
+    "domain": "powershell",
+    "side_effect": null,
+    "description": "Run a local non-elevated PowerShell command after explicit confirmation and capture stdout/stderr.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 3,
+    "permission_level": 3
+  },
+  {
+    "name": "process.find",
+    "domain": "process",
+    "side_effect": "read",
+    "description": "Find running processes by name and report PID, memory, and how long each has run.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "process.inspect",
+    "domain": "process",
+    "side_effect": null,
+    "description": "Check whether an exact PID still exists.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "process.list",
+    "domain": "process",
+    "side_effect": null,
+    "description": "List local processes sorted by memory usage.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "process.stop",
+    "domain": "process",
+    "side_effect": null,
+    "description": "Stop a local non-protected process by PID.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "process.top_cpu",
+    "domain": "process",
+    "side_effect": null,
+    "description": "Show the applications using the most CPU right now.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "process.top_disk_io",
+    "domain": "process",
+    "side_effect": null,
+    "description": "Rank current process read/write I/O rates. Useful when files or apps load slowly, or disk activity seems high; this does not measure disk health or free space.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "process.top_memory",
+    "domain": "process",
+    "side_effect": null,
+    "description": "Show the applications using the most RAM right now.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "process.uptime",
+    "domain": "process",
+    "side_effect": "read",
+    "description": "Report how long a named process or PID has been running.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "project.format",
+    "domain": "project",
+    "side_effect": "reversible_write",
+    "description": "Check black formatting for a project, or with apply=true reformat files in place.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "project.lint",
+    "domain": "project",
+    "side_effect": "external_action",
+    "description": "Run ruff or flake8 over a project folder and report whether it is clean.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "project.test",
+    "domain": "project",
+    "side_effect": "external_action",
+    "description": "Verify a Python project using pytest (runner=pytest) or run a .py program and compare exact expected_stdout (runner=script). Executes project code and returns real exit status.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "python.env_info",
+    "domain": "python",
+    "side_effect": "read",
+    "description": "Report the active Python interpreter, whether it is a virtual environment, and installed packages.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "random.number",
+    "domain": "random",
+    "side_effect": "read",
+    "description": "Generate a random whole number in a range.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "random.pick",
+    "domain": "random",
+    "side_effect": "read",
+    "description": "Choose fairly at random between options the owner supplies.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "reminder.create",
+    "domain": "reminder",
+    "side_effect": "reversible_write",
+    "description": "Save one explicit one-time reminder for the local notification center.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "schedule.list_tasks",
+    "domain": "schedule",
+    "side_effect": "read",
+    "description": "List Windows Scheduled Tasks and their state.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "screen.read_text",
+    "domain": "screen",
+    "side_effect": "read",
+    "description": "Capture the visible desktop once, honor screen exclusions, recognize text locally, and discard the frame.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "security.bitlocker",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Read BitLocker volume encryption status. Recovery keys are never read.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "security.defender",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Read Microsoft Defender real-time protection state and signature freshness.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "security.firewall",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Read whether each Windows Firewall profile is enabled and its default inbound action.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "security.pending_reboot",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Report whether Windows is waiting on a restart to finish servicing or updates.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "security.updates",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "List recently installed Windows updates and hotfixes.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "service.control",
+    "domain": "computer",
+    "side_effect": "external_action",
+    "description": "Start, stop, or restart one non-protected Windows service. Always requires explicit confirmation.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 3,
+    "permission_level": 3
+  },
+  {
+    "name": "service.list",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "List Windows services with running state and start type.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "spotify.focus",
+    "domain": "spotify",
+    "side_effect": "external_action",
+    "description": "Bring the Spotify window to the foreground.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "spotify.launch",
+    "domain": "spotify",
+    "side_effect": "external_action",
+    "description": "Open the Spotify desktop client if it is not already running.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "spotify.next",
+    "domain": "spotify",
+    "side_effect": "external_action",
+    "description": "Skip to the next Spotify track and report what started.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "spotify.open_uri",
+    "domain": "spotify",
+    "side_effect": "external_action",
+    "description": "Open an exact spotify: URI (track, album, playlist, artist, show, episode) in the local client.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "spotify.play_pause",
+    "domain": "spotify",
+    "side_effect": "external_action",
+    "description": "Toggle Spotify playback once: playing becomes paused and paused becomes playing. Read spotify.status first when the current state is unknown; this does not select a song.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "spotify.previous",
+    "domain": "spotify",
+    "side_effect": "external_action",
+    "description": "Go back to the previous Spotify track and report what started.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "spotify.search",
+    "domain": "spotify",
+    "side_effect": "external_action",
+    "description": "Open a Spotify search for a plain-text query in the desktop client. Does not start playback by itself.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "spotify.status",
+    "domain": "spotify",
+    "side_effect": "read",
+    "description": "Read what the local Spotify client is playing right now, from its own window title.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "spotify.volume",
+    "domain": "spotify",
+    "side_effect": "external_action",
+    "description": "Read or set Spotify's own application volume, separate from system volume.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "startup.list",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "List the programs configured to launch when Windows starts.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "system.battery",
+    "domain": "computer",
+    "side_effect": null,
+    "description": "Read the laptop battery percentage and charging state.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "system.event_errors",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Read recent error and critical entries from the Windows System or Application event log.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "system.os_info",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Read the Windows edition, build, CPU count, hostname, and Python version.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "system.performance",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Current CPU/RAM, storage capacity, battery and top-memory snapshot. Healthy here does not rule out disk I/O, GPU load, or a power-plan limit.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "system.stats",
+    "domain": "computer",
+    "side_effect": null,
+    "description": "Read local CPU, RAM and GPU usage/temperature for available adapters. Backend-dependent GPU readings may be unavailable; this is not per-process memory.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "system.uptime",
+    "domain": "computer",
+    "side_effect": "read",
+    "description": "Report how long this machine has been running since boot.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "teams.channel_messages",
+    "domain": "teams",
+    "side_effect": "read",
+    "description": "Read channel root messages using exact team and channel IDs. Replies require teams.replies.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "teams.channels",
+    "domain": "teams",
+    "side_effect": "read",
+    "description": "List channels in an exact team from teams.teams.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "teams.chat_messages",
+    "domain": "teams",
+    "side_effect": "read",
+    "description": "Read recent messages in an exact chat from teams.chats.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "teams.chats",
+    "domain": "teams",
+    "side_effect": "read",
+    "description": "List the signed-in user\u2019s Teams chats.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "teams.replies",
+    "domain": "teams",
+    "side_effect": "read",
+    "description": "Read replies to an exact channel message from teams.channel_messages.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "teams.teams",
+    "domain": "teams",
+    "side_effect": "read",
+    "description": "List teams the signed-in user has joined.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "text.hash",
+    "domain": "text",
+    "side_effect": "read",
+    "description": "Compute a sha256/sha512/sha1/md5 digest of a string, for comparing or fingerprinting content.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "text.normalize",
+    "domain": "text",
+    "side_effect": "read",
+    "description": "Reshape a string: slug, upper, lower, title case, accent stripping, or whitespace collapse.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "text.stats",
+    "domain": "text",
+    "side_effect": "read",
+    "description": "Count words, characters, sentences, and estimated reading time for a block of text.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "time.convert",
+    "domain": "time",
+    "side_effect": "read",
+    "description": "Convert a time between IANA timezones.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "time.elapsed",
+    "domain": "time",
+    "side_effect": "read",
+    "description": "Report how long ago (or how far ahead) an ISO timestamp is.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "time.now",
+    "domain": "time",
+    "side_effect": "read",
+    "description": "Read the OS clock. Omit timezone for local time; accepts IANA zones or Eastern/Central/Mountain/Pacific. kind=date with day_offset=1 resolves tomorrow, -1 yesterday.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "timer.set",
+    "domain": "timer",
+    "side_effect": "external_action",
+    "description": "Set a short ephemeral timer that raises a desktop notification when it fires.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "todo.add",
+    "domain": "todo",
+    "side_effect": "reversible_write",
+    "description": "Save a named assignment or task with its due date locally; exact duplicates return the existing ID. No Google sync.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "todo.complete",
+    "domain": "todo",
+    "side_effect": "reversible_write",
+    "description": "Mark one task completed by its exact ID; read back with todo.get.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "todo.due",
+    "domain": "todo",
+    "side_effect": "read",
+    "description": "List open tasks due in the next N calendar days, including overdue work.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "todo.get",
+    "domain": "todo",
+    "side_effect": "read",
+    "description": "Read back one local task by exact ID to verify its saved fields.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "todo.list",
+    "domain": "todo",
+    "side_effect": "read",
+    "description": "List saved tasks, optionally by course and status; defaults to open.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "ui.active_window",
+    "domain": "ui",
+    "side_effect": null,
+    "description": "Read the current foreground Windows window title and process.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "ui.close_window",
+    "domain": "ui",
+    "side_effect": "external_action",
+    "description": "Politely close windows matching a title substring with WM_CLOSE, never a forced process kill.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 2,
+    "permission_level": 2
+  },
+  {
+    "name": "ui.focus_window",
+    "domain": "ui",
+    "side_effect": null,
+    "description": "Focus a visible window by title substring.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "ui.list_windows",
+    "domain": "ui",
+    "side_effect": null,
+    "description": "List visible top-level Windows windows.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "ui.minimize_all",
+    "domain": "ui",
+    "side_effect": "external_action",
+    "description": "Minimize every visible window to show the desktop.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "ui.window_state",
+    "domain": "ui",
+    "side_effect": "external_action",
+    "description": "Minimize, restore, or maximize windows whose title contains a substring.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 1,
+    "permission_level": 1
+  },
+  {
+    "name": "ui.windows_detailed",
+    "domain": "ui",
+    "side_effect": "read",
+    "description": "List visible windows with their owning process, PID, and minimized state.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "unit.convert",
+    "domain": "unit",
+    "side_effect": "read",
+    "description": "Convert between units of length, mass, data, time, speed, or temperature.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  },
+  {
+    "name": "web.search",
+    "domain": "web",
+    "side_effect": "read",
+    "description": "Search the public web and return bounded source excerpts and URLs.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk_level": 0,
+    "permission_level": 0
+  }
+]

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "routebench"
+version = "0.1.0"
+description = "Open benchmark for natural-language -> MCP tool routing (1,975 cases, 181-tool catalog, strict pass gate)"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["httpx"]
+
+[project.optional-dependencies]
+hanni = []  # requires a hanni-core clone; set --hanni-dir
+
+[project.scripts]
+routebench = "routebench.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["routebench*"]
+
+[tool.setuptools.package-data]
+routebench = ["../catalog/*.json", "../corpora/*.jsonl"]
